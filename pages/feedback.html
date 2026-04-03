@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Form Homework</title>
+    <script src="./scripts/setColors.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header class="site-header">
-        <h1>Homework: Forms</h1>
+        <h1>CubleyCo</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./pages/register.html">Form</a></li>
+                <li><a href="./feedback.html">Form</a></li>
+                <li><a href="./settings.html">Settings</a></li>
             </ul>
         </nav>
     </header>
@@ -40,13 +42,11 @@
             <fieldset>
                 <legend>Feedback</legend>
                 <p>
-                    <label for="category">Category</label>
+                    <label for="category-input">Category</label>
                     <input type="text" id="category-input"
                         name="category" 
-                        aria-autocomplete="list"
                         list='category-options'
                         placeholder="Select or type a category"
-                        role='combobox'
                         required> 
 
                     <!-- Datalist for category options -->  
@@ -65,10 +65,10 @@
             </fieldset>
 
             <!-- Form Buttons -->
-            <section class="button-group">
+            <div class="button-group">
                 <button type='reset' id="resetBtn">Clear Form</button>
                 <button type='submit' id="submitBtn">Submit</button>
-            </section>
+            </div>
         </form>
     </main>
 
@@ -77,6 +77,6 @@
         <p class="footer-copyright">CubleyCo  &copy;2026</p>
         <a class="footer-filler" href="mailto:joshua.lopez1@maine.edu">Contact Us</a>
     </footer>
-    <script src="./scripts/formScript.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 </html>

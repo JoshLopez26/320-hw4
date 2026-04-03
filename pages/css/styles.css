@@ -2,6 +2,9 @@
     --primary: #539679;
     --primary-accent: #467460;
     --txt: #ffffff;
+    --bg-txt: #000000;
+    --bg: #f0f2f5;
+    --body-bg: #ffffff;
     --hover: #cbffc1;
 }
 
@@ -10,6 +13,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--bg-txt);
 }
 
 /* https://www.w3schools.com/howto/howto_js_sticky_header.asp */
@@ -24,6 +28,10 @@
     padding-top: 14px;
     overflow: hidden;
     z-index: 10;
+}
+
+.site-header h1 {
+    color: var(--txt);
 }
 
 /* Stack Overflow for figuring out how to display multiple elements
@@ -76,17 +84,17 @@ a:hover {
    ============================================= */
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--bg);
     
 }
 
 main {
     padding: 20px 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
-    background: white;
+    background: var(--body-bg);
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     width: 85%; 
@@ -99,6 +107,21 @@ main {
     margin-bottom: 120px;
 }
 
+#home-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+    #home-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+img{
+    border-radius: 12px;
+}
 /* =============================================
    2. INPUTS & SHOW BUTTON FIX
    ============================================= */
@@ -134,7 +157,7 @@ label {
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #4a5568;
+    color: var(--bg-txt);
 }
 
 .input-container {
@@ -154,21 +177,13 @@ input[type='email']{
 	font-size: 1rem;
 }
 
+.error-message{
+    color: red;
+    font-weight: 100;
+}
 
-
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #edf2f7;
-    border: 1px solid #cbd5e0;
-    border-radius: 4px;
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    z-index: 5;
+.button-group button {
+    font-size: 1.2rem;
 }
 
 /* =============================================
@@ -236,10 +251,16 @@ button {
     border: none;
     font-weight: 700;
     cursor: pointer;
+    background: var(--primary);
+    color:var(--txt);
+    transition: all 0.1s;
 }
 
-button[type='submit']{ background: var(--primary); color:white;}
-button[type='reset']{ background: var(--primary-accent); color:white;}
+button:hover{
+    background: var(--primary-accent);
+    color:var(--hover);
+    transition: all 0.1s;
+}
 
 
 footer {
@@ -253,6 +274,7 @@ footer {
 }
 
 .footer-copyright {
+    color: var(--txt);
     text-align: center;
     margin: 7px 0;
     padding: 0;
