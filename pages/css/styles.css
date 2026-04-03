@@ -1,0 +1,267 @@
+:root {
+    --primary: #539679;
+    --primary-accent: #467460;
+    --txt: #ffffff;
+    --hover: #cbffc1;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* https://www.w3schools.com/howto/howto_js_sticky_header.asp */
+.site-header {
+    color: var(--txt);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: var(--primary);
+    text-align: center;
+    font-size: 16px;
+    padding-top: 14px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Stack Overflow for figuring out how to display multiple elements
+   on one row */
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--primary-accent);
+    overflow: hidden;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 7px 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    padding: 0px 14px;
+}
+
+a {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.1s;
+    color: var(--txt);
+}
+
+a:visited:hover {
+    text-decoration: none;
+    color: var(--hover);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--hover);
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+/* =============================================
+   1. BASE STYLES (Mobile-First & Fluid)
+   ============================================= */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f0f2f5;
+    
+}
+
+main {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 85%; 
+    max-width: 1200px; 
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 120px;
+}
+
+/* =============================================
+   2. INPUTS & SHOW BUTTON FIX
+   ============================================= */
+form {
+    width: 100%;
+}
+
+
+form p {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+form fieldset p {
+    padding: 0 14px;
+}
+
+fieldset
+{
+	border: 2px solid #bcc3cc;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+legend {
+    font-size: 1rem;
+    margin-left: 14px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email']{
+	width:100%;
+	padding:14px 0px 14px 14px;
+	border: 2px solid #e2e8f0;
+	border-radius: 8px;
+	box-sizing: border-box;
+	font-size: 1rem;
+}
+
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #edf2f7;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* =============================================
+   3. RESPONSIVE MEDIA QUERIES
+   ============================================= */
+
+/* TABLET LAYOUT (600px and up) */
+@media (min-width: 600px) {
+ 	main{
+ 	padding: 3rem;
+ 	width:85%
+ 	
+ 	}
+ 	
+ 	.button-group{
+ 		display:flex;
+ 		gap:15px;
+ 	}
+ 
+}
+
+/* DESKTOP WIDE LAYOUT (1024px and up) */
+@media (min-width: 1024px) {
+   main{width:70%;
+   max-width:1000px;}
+
+	.identity-fields{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}   
+}
+
+/* =============================================
+   4. UI COMPONENTS (Meter & Checklist)
+   ============================================= */
+progress {
+   width: 100%;
+   height:10px;
+   margin-top:15px;
+   border-radius: 5px;
+   
+}
+
+.checklist {
+    list-style:none;
+    padding:0;
+    margin: 15px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:10px;
+    
+}
+
+.checklist li { 
+font-size: 0.85rem; 
+color: #718096; 
+}
+.checklist li.valid { color: #38a169; text-decoration: line-through; }
+
+button {
+    flex: 1;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button[type='submit']{ background: var(--primary); color:white;}
+button[type='reset']{ background: var(--primary-accent); color:white;}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-accent);
+    overflow: hidden;
+    color: var(--txt);
+}
+
+.footer-copyright {
+    text-align: center;
+    margin: 7px 0;
+    padding: 0;
+}
+
+.footer-filler {
+    text-align: center;
+    background: var(--primary);
+    padding: 10px 0;
+    padding-bottom: 30px;
+    display: block;
+}

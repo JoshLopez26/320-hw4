@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Form Homework</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <h1>Homework: Forms</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./pages/register.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <form id="feedbackForm" action="/submit" method="POST" novalidate>
+            <header>
+                <h2>Feedback:</h2>
+                <p>Please provide your feedback below.</p>
+            </header>
+
+            <!-- Contact Information Section -->
+            <fieldset>
+                <legend>Contact</legend>
+                <p>
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="contact_email" required>
+                    <span class="error-message" id="contact-email-error" aria-live="polite"></span>
+                </p>
+            </fieldset>
+
+            <!-- Feedback Section -->
+            <fieldset>
+                <legend>Feedback</legend>
+                <p>
+                    <label for="category">Category</label>
+                    <input type="text" id="category-input"
+                        name="category" 
+                        aria-autocomplete="list"
+                        list='category-options'
+                        placeholder="Select or type a category"
+                        role='combobox'
+                        required> 
+
+                    <!-- Datalist for category options -->  
+                    <datalist id='category-options'>
+                        <option value="General" >
+                        <option value="Bug Report" >
+                        <option value="Feature Request" >
+                    </datalist>
+                    <span class="error-message" id="category-input-error" aria-live="polite"></span>
+                </p>
+                <p>
+                    <label for="feedback-message">Your Message</label>
+                    <input type="text" id="feedback-message" name="feedback_message" required>
+                    <span class="error-message" id="feedback-message-error" aria-live="polite"></span>
+                </p>
+            </fieldset>
+
+            <!-- Form Buttons -->
+            <section class="button-group">
+                <button type='reset' id="resetBtn">Clear Form</button>
+                <button type='submit' id="submitBtn">Submit</button>
+            </section>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-copyright">CubleyCo  &copy;2026</p>
+        <a class="footer-filler" href="mailto:joshua.lopez1@maine.edu">Contact Us</a>
+    </footer>
+    <script src="./scripts/formScript.js"></script>
+</body>
+</html>
